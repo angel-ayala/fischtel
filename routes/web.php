@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('tipos','TiposController');
+Route::resource('operadores','OperadoresController');
+Route::resource('elementos','ElementosController');
+    
