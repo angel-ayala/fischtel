@@ -46,7 +46,7 @@
 						
                         <div class="panel-body">
 							<div class="pull-right">
-								<a href="registro.php" class="btn btn-sm btn-primary">Nuevo cliente</a>
+								<a href="registro.blade.php" class="btn btn-sm btn-primary">Registrar nuevo Nodo</a>
 							</div><br>
 							<hr>
                                     <table id="lookup" class="table table-bordered table-hover">  
@@ -54,12 +54,10 @@
                                         <tr>
 	  
                                         <th>ID</th>
-	                                    <th>Nombres </th>
-                                        <th>Teléfono </th>
-                                        <th>Email</th>
-                                        <th>Dirección </th>
-	                                    <th>Registrado</th>
-	                                    <th class="text-center"> Acciones </th> 
+	                                    <th>Operador </th>
+                                        <th>Tipo </th>
+                                        <th>Elemento</th>
+                                        <th class="text-center"> Acciones </th> 
 	  
                                        </tr>
                                       </thead>
@@ -137,4 +135,4 @@
       -->
     </body>
 
-</html>>
+</html>
