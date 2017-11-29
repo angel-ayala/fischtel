@@ -33,32 +33,48 @@
             <!-- /navbar-inner -->
         </div><br />
 
-           <div class="container">
+            <div class="container">
                 <div class="row">
                     <div class="span12">
                         <div class="content">
                             
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="icon-user"></i> DataTables procesando datos del lado del servidor
-                                    </h3> 
-                         
-                                 </div>
-                        
-                        
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        <h3 class="panel-title"><i class="icon-user"></i> DataTables procesando datos del lado del servidor</h3> 
+						 
+                        </div>
+						
+                        <div class="panel-body">
+							<div class="pull-right">
+								<a href="registro.blade.php" class="btn btn-sm btn-primary">Registrar nuevo Nodo</a>
+							</div><br>
+							<hr>
+                                    <table id="lookup" class="table table-bordered table-hover">  
+	                                   <thead bgcolor="#eeeeee" align="center">
+                                        <tr>
+	  
+                                        <th>ID</th>
+	                                    <th>Operador </th>
+                                        <th>Tipo </th>
+                                        <th>Elemento</th>
+                                        <th class="text-center"> Acciones </th> 
+	  
+                                       </tr>
+                                      </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                            
+                                </div>
                             </div>
                             
                         </div>
-
-      @yield('content')
                         <!--/.content-->
                     </div>
                     <!--/.span9-->
                 </div>
             </div>
             <!--/.container-->
-
-   
         
         <!--/.wrapper--><br />
         <div class="footer span-12">
