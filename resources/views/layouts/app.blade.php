@@ -59,7 +59,7 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
-    <a class="navbar-brand" href="/"></a>
+    <a class="navbar" href="/">Fischtel</a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">☰</button>
    <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
