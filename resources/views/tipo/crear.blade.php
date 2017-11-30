@@ -4,7 +4,7 @@
 
 <div class="card">
 	<div class="card-header">
-    	<h3>CREAR TIPO DE ELEMENTO</h3>
+    	<h3>CREAR TIPO DE SOLICITUD</h3>
 	</div>
   	<div class="card-body">
 
@@ -15,29 +15,15 @@
             <form class="register-form" method="POST" action="{{ url('tipos') }}">
 
                 {{ csrf_field() }}
-                <div class="form-group">  
-                    <label for="descripcion">Descripcion</label>
-    
-                    <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}" aria-describedby="nameHelpText" required autofocus>
-    
-                    @if ($errors->has('descripcion'))
-                        <span class="help-text" id="nameHelpText">
-                            <strong>{{ $errors->first('descripcion') }}</strong>
-                        </span>
-                    @endif
-                </div>
-                
-                <div class="form-group">  
-                    <label for="descripcion">Cantidad de atributos</label>
-    
-                    <input id="descripcion" type="text" class="form-control" name="cantidad_atributos" value="{{ old('cantidad_atributos') }}" aria-describedby="nameHelpText" required>
-    
-                    @if ($errors->has('cantidad_atributos'))
-                        <span class="help-text" id="nameHelpText">
-                            <strong>{{ $errors->first('cantidad_atributos') }}</strong>
-                        </span>
-                    @endif
-                </div>
+                <label for="descripcion">Descripcion</label>
+
+                <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}" aria-describedby="nameHelpText" required autofocus>
+
+                @if ($errors->has('descripcion'))
+                    <span class="help-text" id="nameHelpText">
+                        <strong>{{ $errors->first('descripcion') }}</strong>
+                    </span>
+                @endif
                 
                   @if (\Session::has('success'))
                   <div class="alert alert-success">

@@ -15,11 +15,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-<<<<<<< HEAD
     <title>Fischtel</title>
-=======
-    <title>{{ config('app.name', 'Laravel') }}</title>
->>>>>>> 805c5b3deb0e5c289d09df256adf8aa680a14990
 
     <!-- Icons -->
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
@@ -104,21 +100,18 @@
       <nav class="sidebar-nav">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('elementos') }}"><i class="fa fa-th-list"></i> Elementos</a>
+            <a class="nav-link" href="{{ url('clientes') }}"><i class="fa fa-address-card"></i> Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('operadores') }}"><i class="fa fa-address-card"></i> Operadores</a>
+            <a class="nav-link" href="{{ url('solicitudes') }}"><i class="fa fa-info-circle"></i> Solicitudes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('tipos') }}"><i class="fa fa-th-list"></i> Tipos de Elementos</a>
+            <a class="nav-link" href="{{ url('origenes') }}"><i class="fa fa-th-list"></i> Origenes de Solicitud</a>
           </li>
-          <li class="divider"></li>
           <li class="nav-item">
-            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-            	{{ csrf_field() }}
-        	</form>
-            <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
+            <a class="nav-link" href="{{ url('tipos') }}"><i class="fa fa-th-list"></i> Tipos de Solicitud</a>
           </li>
+
         </ul>
       </nav>
       <button class="sidebar-minimizer brand-minimizer" type="button"></button>
@@ -136,13 +129,8 @@
   </div>
 
   <footer class="app-footer">
-<<<<<<< HEAD
     <span> 2017 @ Arquitectura de Software - Universidad Central</span>
     
-=======
-    <span> 2017 @ FISCHTEL</span>
-    <span class="ml-auto">Powered by <a href="http://coreui.io">CoreUI</a></span>
->>>>>>> 805c5b3deb0e5c289d09df256adf8aa680a14990
   </footer>
 
   

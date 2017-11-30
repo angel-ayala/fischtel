@@ -39,7 +39,9 @@ class TiposController extends Controller
     {
         $tipo = $this->validate(request(), [
             'descripcion' => 'required',
-            'cantidad_atributos' => 'required'
+            'id_origen' => 'required',
+            'id_tipo' => 'required',
+            'id_cliente' => 'required',
         ]);
         
         Tipo::create($tipo);
@@ -55,8 +57,8 @@ class TiposController extends Controller
      */
     public function edit($id)
     {
-        $tipo = Tipo::find($id)->toArray();;
-        return view('tipo.editar',compact('tipo', 'id'));
+        $tipo = Tipo::find($id);
+        return view('tipo.editar',compact('tipo'));
     }
     
     /**
@@ -71,7 +73,9 @@ class TiposController extends Controller
         $tipo = Tipo::find($id);
         $this->validate(request(), [
             'descripcion' => 'required',
-            'cantidad_atributos' => 'required',
+            'id_origen' => 'required',
+            'id_tipo' => 'required',
+            'id_cliente' => 'required',
         ]);
         
         $tipo->fill(request()->all());
@@ -88,8 +92,8 @@ class TiposController extends Controller
      */
     public function destroy($id)
     {
-        $tipo = Tipo::find($id);
-        $tipo->delete();
+        $operador = Tipo::find($id);
+        $operador->delete();
         
         return redirect('tipos')->with('success','Tipo eliminado');
     }
