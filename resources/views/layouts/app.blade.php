@@ -15,7 +15,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
+    <title>Fischtel</title>
 
     <!-- Icons -->
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
@@ -59,9 +59,40 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
-    <a class="navbar-brand" href="#"></a>
+    <a class="navbar-brand" href="/"></a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">☰</button>
+   <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a href="{{ route('login') }}">Ingresar</a></li>
+                            <li><a href="{{ route('register') }}">Registrarse</a></li>
+                        @else
+                            <li class="dropdown">
+                             
 
+								
+								<a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+													 role="button">
+                                            ------Salir de usuario {{ Auth::user()->name }}--------
+                                        </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Salir
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endguest
+                    </ul>
   </header>
 
   <div class="app-body">
@@ -99,7 +130,7 @@
 
   <footer class="app-footer">
     <span> 2017 @ Arquitectura de Software - Universidad Central</span>
-    <span class="ml-auto">Powered by <a href="http://coreui.io">CoreUI</a></span>
+    
   </footer>
 
   
