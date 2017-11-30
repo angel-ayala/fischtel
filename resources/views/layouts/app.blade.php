@@ -15,7 +15,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
+<<<<<<< HEAD
     <title>Fischtel</title>
+=======
+    <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
+>>>>>>> parent of 805c5b3... primera version
 
     <!-- Icons -->
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
@@ -130,7 +134,11 @@
 
   <footer class="app-footer">
     <span> 2017 @ Arquitectura de Software - Universidad Central</span>
+<<<<<<< HEAD
     
+=======
+    <span class="ml-auto">Powered by <a href="http://coreui.io">CoreUI</a></span>
+>>>>>>> parent of 805c5b3... primera version
   </footer>
 
   
