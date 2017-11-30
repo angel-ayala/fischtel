@@ -14,7 +14,7 @@ class OperadoresController extends Controller
      */
     public function index()
     {
-        $operadores = Operador::all();
+        $operadores = Operador::all()->toArray();
         return view('operador.index', compact('operadores'));
     }
     
@@ -25,7 +25,6 @@ class OperadoresController extends Controller
      */
     public function create()
     {
-//         $tipos = Tipo::all();
         return view('operador.crear');
     }
     
@@ -38,10 +37,8 @@ class OperadoresController extends Controller
     public function store(Request $request)
     {
         $operador = $this->validate(request(), [
-            'descripcion' => 'required',
-            'id_origen' => 'required',
-            'id_tipo' => 'required',
-            'id_cliente' => 'required',
+            'nombre' => 'required',
+            'representante_legal' => 'required',
         ]);
         
         Operador::create($operador);
@@ -57,8 +54,8 @@ class OperadoresController extends Controller
      */
     public function edit($id)
     {
-        $operador = Operador::find($id);
-        return view('operador.editar',compact('operador'));
+        $operador = Operador::find($id)->toArray();
+        return view('operador.editar',compact('operador', 'id'));
     }
     
     /**
@@ -72,10 +69,9 @@ class OperadoresController extends Controller
     {
         $operador = Operador::find($id);
         $this->validate(request(), [
-            'descripcion' => 'required',
-            'id_origen' => 'required',
-            'id_tipo' => 'required',
-            'id_cliente' => 'required',
+            'nombre' => 'required',
+            'representante_legal' => 'required',
+            'estado' => 'required',
         ]);
         
         $operador->fill(request()->all());
@@ -95,6 +91,6 @@ class OperadoresController extends Controller
         $operador = Operador::find($id);
         $operador->delete();
         
-        return redirect('elementos')->with('success','Operador eliminado');
+        return redirect('operadores')->with('success','Operador eliminado');
     }
 }
