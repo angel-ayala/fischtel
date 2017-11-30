@@ -4,7 +4,7 @@
 
 <div class="card">
 	<div class="card-header">
-    	<h3>CREAR TIPO DE ELEMENTO</h3>
+    	<h3>CREAR OPERADOR</h3>
 	</div>
   	<div class="card-body">
 
@@ -12,29 +12,29 @@
 
         <div class="form-container small-6 small-centered columns">
 
-            <form class="register-form" method="POST" action="{{ url('tipos') }}">
+            <form class="register-form" method="POST" action="{{ url('operadores') }}">
 
                 {{ csrf_field() }}
                 <div class="form-group">  
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Nombre</label>
     
-                    <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{ old('descripcion') }}" aria-describedby="nameHelpText" required autofocus>
+                    <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" aria-describedby="nameHelpText" required autofocus>
     
-                    @if ($errors->has('descripcion'))
+                    @if ($errors->has('nombre'))
                         <span class="help-text" id="nameHelpText">
-                            <strong>{{ $errors->first('descripcion') }}</strong>
+                            <strong>{{ $errors->first('nombre') }}</strong>
                         </span>
                     @endif
                 </div>
                 
                 <div class="form-group">  
-                    <label for="descripcion">Cantidad de atributos</label>
+                    <label for="descripcion">Representante Legal</label>
     
-                    <input id="descripcion" type="text" class="form-control" name="cantidad_atributos" value="{{ old('cantidad_atributos') }}" aria-describedby="nameHelpText" required>
+                    <input id="representante_legal" type="text" class="form-control" name="representante_legal" value="{{ old('representante_legal') }}" aria-describedby="nameHelpText" required autofocus>
     
-                    @if ($errors->has('cantidad_atributos'))
+                    @if ($errors->has('representante_legal'))
                         <span class="help-text" id="nameHelpText">
-                            <strong>{{ $errors->first('cantidad_atributos') }}</strong>
+                            <strong>{{ $errors->first('representante_legal') }}</strong>
                         </span>
                     @endif
                 </div>

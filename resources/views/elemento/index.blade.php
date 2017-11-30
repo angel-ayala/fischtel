@@ -4,10 +4,10 @@
 
 <div class="card">
 	<div class="card-header">
-    	<h3 class="pull-left">TIPOS DE SOLICITUD</h3>
+    	<h3 class="pull-left">ELEMENTOS DE RED</h3>
          <ul class="pull-right nav nav-pills card-header-pills">
           <li class="nav-item">
-            <a class="nav-link success active" href="{{ action('ElementosController@create') }}">Crear</a>
+            <a class="nav-link success active" href="{{ route('elementos.create') }}">Crear</a>
           </li>
         </ul>
 	</div>
@@ -22,18 +22,40 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Descripci&oacute;n</th>
+            <th>Nombre</th>
+            <th>Serie</th>
+            <th>Tipo</th>
+            <th>Operador</th>
+            <th>Elemento A</th>
+            <th>Elemento B</th>
             <th colspan="2">Accion</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($tipos as $tipo)
+          @foreach($elementos as $elemento)
           <tr>
-            <td>{{$tipo['id']}}</td>
-            <td>{{$tipo['descripcion']}}</td>
-            <td><a href="{{action('ElementosController@edit', $elemento['id'])}}" class="btn btn-warning">Editar</a></td>
+            <td>{{$elemento['id']}}</td>
+            <td>{{$elemento['nombre']}}</td>
+            <td>{{$elemento['numero_serie']}}</td>
+            <td>{{$elemento['tipo']['descripcion']}}</td>
+            <td>{{$elemento['operador']['nombre']}}</td>
             <td>
-              <form action="{{action('ElementosController@destroy', $elemento['id'])}}" method="post">
+            	@if(isset($elemento['nodo_a']))
+            	{{$elemento['nodo_a']['nombre']}} [{{$elemento['nodo_a']['numero_serie']}}]
+            	@else 
+            	Sin Elemento
+				@endif				
+			</td>
+            <td>
+            	@if(isset($elemento['nodo_b']))
+            	{{$elemento['nodo_b']['nombre']}} [{{$elemento['nodo_b']['numero_serie']}}]
+            	@else 
+            	Sin Elemento
+				@endif				
+			</td>
+            <td><a href="{{route('elementos.edit', $elemento['id'])}}" class="btn btn-warning">Editar</a></td>
+            <td>
+              <form action="{{route('elementos.destroy', $elemento['id'])}}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Quitar</button>
@@ -44,7 +66,7 @@
         </tbody>
       </table>
       
-      <a href="{{ action('ElementosController@create') }}" class="btn btn-success">Crear</a>
+      <a href="{{ route('elementos.create') }}" class="btn btn-success">Crear</a>
 
     </div>
 

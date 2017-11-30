@@ -4,10 +4,10 @@
 
 <div class="card">
 	<div class="card-header">
-    	<h3 class="pull-left">TIPOS DE ELEMENTOS</h3>
+    	<h3 class="pull-left">OPERADORES</h3>
          <ul class="pull-right nav nav-pills card-header-pills">
           <li class="nav-item">
-            <a class="nav-link success active" href="{{ route('tipos.create') }}">Crear</a>
+            <a class="nav-link success active" href="{{ route('operadores.create') }}">Crear</a>
           </li>
         </ul>
 	</div>
@@ -22,18 +22,22 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Descripci&oacute;n</th>
+            <th>Nombre</th>
+            <th>Representante Legal</th>
+            <th>Estado</th>
             <th colspan="2">Accion</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($tipos as $tipo)
+          @foreach($operadores as $operador)
           <tr>
-            <td>{{$tipo['id']}}</td>
-            <td>{{$tipo['descripcion']}}</td>
-            <td><a href="{{ route('tipos.edit', $tipo['id']) }}" class="btn btn-warning">Editar</a></td>
+            <td>{{$operador['id']}}</td>
+            <td>{{$operador['nombre']}}</td>
+            <td>{{$operador['representante_legal']}}</td>
+            <td>{{$operador['estado'] == 1 ? 'ACTIVO' : 'INACTIVO'}}</td>
+            <td><a href="{{ route('operadores.edit', $operador['id']) }}" class="btn btn-warning">Editar</a></td>
             <td>
-              <form action="{{ route('tipos.destroy', $tipo['id']) }}" method="post">
+              <form action="{{ route('operadores.destroy', $operador['id']) }}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Quitar</button>
@@ -44,7 +48,7 @@
         </tbody>
       </table>
       
-      <a href="{{ route('tipos.create') }}" class="btn btn-success">Crear</a>
+      <a href="{{ route('operadores.create') }}" class="btn btn-success">Crear</a>
 
     </div>
 

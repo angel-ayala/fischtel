@@ -11,15 +11,8 @@ class Tipo extends Model
      *
      * @var string
      */
-    protected $table = 'Tipo';
-    
-    /**
-     * The prima key for table.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'id_tipo';
-    
+    protected $table = 'tipos';
+        
     /**
      * The attributes that are mass assignable.
      *
